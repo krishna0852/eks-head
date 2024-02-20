@@ -1,0 +1,28 @@
+# role creation 
+
+apiVersion: rbac.authorization.k8s.io/v1 
+kind: Role 
+metadata: 
+  name: roboshop-admin 
+  namespace: roboshop
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+
+--- 
+# role-binding , attaching the above role to the iam user through role binding 
+
+apiVersion: rbac.authorization.k8s.io/v1 
+kind: RoleBinding 
+metadata: 
+  name: roboshop-admin-rolebinding 
+  namespace: roboshop
+subjects:
+  - kind: User 
+    name: k8s-admin  #give iam user-name
+    apiGroup:  rbac.authorization.k8s.io 
+roleRef: 
+  kind: Role 
+  name: roboshop-k8-admin
+  apiGroup: rbac.authorization.k8s.io
