@@ -3,11 +3,12 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: roboshop-efs-file-system
+  namespace: roboshop
 provisioner: efs.csi.aws.com
 reclaimPolicy: Delete
 parameters:
   provisioningMode: efs-ap
-  fileSystemId: fs-0871caaf72e84776b
+  fileSystemId: fs-09506b7e2a5a7e99b
   directoryPerms: "700"
   gidRangeStart: "1000" # optional
   gidRangeEnd: "2000" # optional
