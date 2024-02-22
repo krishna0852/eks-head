@@ -1,0 +1,13 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: dynamic-provis
+provisioner: ebs.csi.aws.com # Amazon EBS CSI driver
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer # EBS volumes are AZ specific
+parameters:
+  type: gp2
+  encrypted: 'true' # EBS volumes will always be encrypted by default
+
+
+  # from now-onwards, we are using ebs not efs, commenting all efs cofiguration
