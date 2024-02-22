@@ -1,15 +1,15 @@
-# before applying this, make sure you have efs drivers installed in whereever you apply this manifest file
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: roboshop-efs-file-system
-  namespace: roboshop
-provisioner: efs.csi.aws.com
-reclaimPolicy: Delete
-parameters:
-  provisioningMode: efs-ap
-  fileSystemId: fs-09506b7e2a5a7e99b
-  directoryPerms: "700"
-  gidRangeStart: "1000" # optional
-  gidRangeEnd: "2000" # optional
-  basePath: "/dynamic_provisioning"
+# # before applying this, make sure you have efs drivers installed in whereever you apply this manifest file
+# apiVersion: storage.k8s.io/v1
+# kind: StorageClass
+# metadata:
+#   name: roboshop-efs-file-system
+#   namespace: roboshop
+# provisioner: efs.csi.aws.com
+# reclaimPolicy: Delete
+# parameters:
+#   provisioningMode: efs-ap
+#   fileSystemId: fs-09506b7e2a5a7e99b
+#   directoryPerms: "700"
+#   gidRangeStart: "1000" # optional
+#   gidRangeEnd: "2000" # optional
+#   basePath: "/dynamic_provisioning"
