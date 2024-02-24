@@ -5,8 +5,8 @@ metadata:
   name: roboshop-k8-admin
 rules:
   #- apiGroups: [""]-> represents core-group api which is v1 
-   - apiGroups: [""]
-     resources: ["nodes","namespaces"]
+   - apiGroups: ["*"]
+     resources: ["nodes","namespaces","customresourcedefinitions"]
      verbs: ["get","watch","list"]
 
 --- 
